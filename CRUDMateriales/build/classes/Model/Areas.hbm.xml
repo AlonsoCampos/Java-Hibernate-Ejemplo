@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/12/2013 11:11:47 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Areas" table="areas" catalog="requesicion">
+        <id name="idArea" type="java.lang.Integer">
+            <column name="idArea" />
+            <generator class="identity" />
+        </id>
+        <property name="area" type="string">
+            <column name="area" length="45" not-null="true" />
+        </property>
+        <property name="encargado" type="string">
+            <column name="encargado" length="45" not-null="true" />
+        </property>
+        <set name="usuarios" inverse="true">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Model.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>

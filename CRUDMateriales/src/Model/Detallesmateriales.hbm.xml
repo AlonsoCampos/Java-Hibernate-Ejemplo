@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/12/2013 11:11:47 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Detallesmateriales" table="detallesmateriales" catalog="requesicion">
+        <id name="idDetalleMaterial" type="java.lang.Integer">
+            <column name="idDetalleMaterial" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="unidades" class="Model.Unidades" fetch="select">
+            <column name="idUnidades" not-null="true" />
+        </many-to-one>
+        <many-to-one name="materiales" class="Model.Materiales" fetch="select">
+            <column name="idMateriales" not-null="true" />
+        </many-to-one>
+        <property name="codigo" type="string">
+            <column name="codigo" length="45" not-null="true" />
+        </property>
+        <property name="stock" type="float">
+            <column name="stock" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="fechaCaducidad" type="timestamp">
+            <column name="fechaCaducidad" length="19" />
+        </property>
+        <property name="detalles" type="string">
+            <column name="detalles" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

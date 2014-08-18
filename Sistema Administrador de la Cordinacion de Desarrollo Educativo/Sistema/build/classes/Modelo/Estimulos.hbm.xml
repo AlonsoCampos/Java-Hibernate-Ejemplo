@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5/10/2012 04:57:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Modelo.Estimulos" table="estimulos" catalog="estimulos">
+        <id name="idEstimulos" type="java.lang.Integer">
+            <column name="idEstimulos" />
+            <generator class="identity" />
+        </id>
+        <property name="rfc" type="string">
+            <column name="RFC" length="45" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="ApellidoPaterno" length="45" not-null="true" />
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="ApellidoMaterno" length="45" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="Clave" length="45" not-null="true" />
+        </property>
+        <property name="fechaIngreso" type="string">
+            <column name="FechaIngreso" length="45" not-null="true" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="Observaciones" length="45" not-null="true" />
+        </property>
+        <property name="puesto" type="string">
+            <column name="Puesto" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/12/2013 11:11:47 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Materiales" table="materiales" catalog="requesicion">
+        <id name="idMateriales" type="java.lang.Integer">
+            <column name="idMateriales" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estado" class="Model.Estado" fetch="select">
+            <column name="idEstado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="marcas" class="Model.Marcas" fetch="select">
+            <column name="idMarca" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ubicacion" class="Model.Ubicacion" fetch="select">
+            <column name="idUbicacion" not-null="true" />
+        </many-to-one>
+        <property name="material" type="string">
+            <column name="material" length="45" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" length="65535" />
+        </property>
+        <property name="activo" type="boolean">
+            <column name="activo" not-null="true" />
+        </property>
+        <set name="entradases" inverse="true">
+            <key>
+                <column name="idMateriales" not-null="true" />
+            </key>
+            <one-to-many class="Model.Entradas" />
+        </set>
+        <set name="detallesmaterialeses" inverse="true">
+            <key>
+                <column name="idMateriales" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallesmateriales" />
+        </set>
+        <set name="detallespedidoses" inverse="true">
+            <key>
+                <column name="idMateriales" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallespedidos" />
+        </set>
+    </class>
+</hibernate-mapping>

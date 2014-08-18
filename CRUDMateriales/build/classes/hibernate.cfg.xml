@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/requesicion</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="Model/Estado.hbm.xml"/>
+    <mapping resource="Model/Entradas.hbm.xml"/>
+    <mapping resource="Model/Salidas.hbm.xml"/>
+    <mapping resource="Model/Ubicacion.hbm.xml"/>
+    <mapping resource="Model/Pedidos.hbm.xml"/>
+    <mapping resource="Model/Materiales.hbm.xml"/>
+    <mapping resource="Model/Marcas.hbm.xml"/>
+    <mapping resource="Model/Detallespedidos.hbm.xml"/>
+    <mapping resource="Model/Administrador.hbm.xml"/>
+    <mapping resource="Model/Devoluciones.hbm.xml"/>
+    <mapping resource="Model/Requesiciones.hbm.xml"/>
+    <mapping resource="Model/Areas.hbm.xml"/>
+    <mapping resource="Model/Usuario.hbm.xml"/>
+    <mapping resource="Model/Unidades.hbm.xml"/>
+    <mapping resource="Model/Detallesmateriales.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
